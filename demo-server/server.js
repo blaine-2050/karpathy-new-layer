@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Parent directory (notes/)
 const NOTES_DIR = path.join(__dirname, '..');
@@ -148,7 +148,7 @@ app.get('/', (req, res) => {
 
 // Timeline page
 app.get('/timeline', (req, res) => {
-  const timelinePath = path.join(NOTES_DIR, 'karpathy-new-layer-timeline.md');
+  const timelinePath = path.join(NOTES_DIR, 'karpathy-new-layer-complete.md');
   const html = renderMarkdown(timelinePath);
   const info = getFileInfo(timelinePath);
 
@@ -164,8 +164,7 @@ app.get('/timeline', (req, res) => {
 // Specifications page
 app.get('/specs', (req, res) => {
   const specFiles = [
-    { path: 'karpathy-new-layer.md', desc: 'Original prompt/task specification' },
-    { path: 'examples.md', desc: 'Specification for this demo server' },
+    { path: 'karpathy-new-layer-complete.md', desc: 'Complete document (prompt + timeline + examples)' },
     { path: 'CLAUDE.md', desc: 'Project context for Claude Code' },
     { path: '.claude/skills/start-demo-server.md', desc: 'Skill definition example' },
     { path: '.claude/hooks.md', desc: 'Hooks configuration example' },
