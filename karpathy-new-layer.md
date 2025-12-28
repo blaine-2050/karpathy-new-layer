@@ -24,3 +24,49 @@ using search and writing tools, write a timeine of the adoption of all the tools
 - in addition to your built in tools you have access to the exa MCP server for search
 - before you begin, review your current skills and see if any are relevant to your task.
 
+## examples
+
+Build a working demonstration that shows these concepts in action. The demo should:
+
+1. **Be self-referential**: Show the reader the very files that were used to create it
+2. **Include a simple web server** (Node.js/Express) that displays:
+   - The timeline document rendered as HTML
+   - A directory listing of all project files
+   - The specification files (this document, CLAUDE.md, skills, hooks)
+3. **Demonstrate Claude Code components**:
+   - `CLAUDE.md` - project context file
+   - `.claude/skills/` - a skill definition for starting the server
+   - `.claude/hooks.md` - example hook configurations
+4. **Be educational**: Help readers understand that the "source code" for this project is largely English text in Markdown, interpreted by AI
+
+### File structure
+
+```
+notes/
+├── karpathy-new-layer.md          # This specification
+├── karpathy-new-layer-timeline.md # Generated timeline
+├── examples.md                    # Demo server specification
+├── CLAUDE.md                      # Project context for Claude Code
+├── .claude/
+│   ├── skills/
+│   │   └── start-demo-server.md   # Skill to launch the server
+│   └── hooks.md                   # Hook examples
+└── demo-server/
+    ├── package.json
+    └── server.js                  # Express server
+```
+
+### Running the demo
+
+```bash
+cd demo-server
+npm install
+npm start
+# Open http://localhost:3000
+```
+
+The server should display navigation between:
+- Home (overview of what the demo shows)
+- Timeline (rendered karpathy-new-layer-timeline.md)
+- Specifications (the Markdown files that defined everything)
+- Files (directory listing)
