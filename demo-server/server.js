@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 // Parent directory (notes/)
 const NOTES_DIR = path.join(__dirname, '..');
 
-// Simple CSS for readable presentation
+// CSS for readable presentation with typography distinctions
 const CSS = `
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
@@ -21,19 +21,57 @@ const CSS = `
   }
   h1 { border-bottom: 2px solid #333; padding-bottom: 0.5rem; }
   h2 { color: #555; margin-top: 2rem; }
+
+  /* Typewriter font for code blocks (prompts and original markdown) */
   pre {
-    background: #f5f5f5;
-    padding: 1rem;
+    background: #fafafa;
+    padding: 1.25rem;
     overflow-x: auto;
     border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
+    font-size: 0.9em;
+    line-height: 1.5;
   }
   code {
+    font-family: 'Courier New', Courier, 'Liberation Mono', monospace;
     background: #f0f0f0;
     padding: 0.2rem 0.4rem;
     border-radius: 3px;
     font-size: 0.9em;
   }
   pre code { background: none; padding: 0; }
+
+  /* Term entry styling for timeline definitions */
+  .term-entry {
+    margin: 1.5rem 0;
+    padding-left: 0;
+  }
+  .term-entry > p:first-of-type strong {
+    font-size: 1.15em;
+    color: #222;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  .term-entry > p:first-of-type em {
+    color: #666;
+    font-size: 0.9em;
+  }
+  .term-entry > p:nth-of-type(2) {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    color: #444;
+  }
+  .term-entry > p:nth-of-type(3) {
+    margin-left: 1.5rem;
+    color: #555;
+    font-size: 0.95em;
+  }
+  .term-entry > p:nth-of-type(3) em {
+    font-style: normal;
+    color: #666;
+  }
+
   a { color: #0066cc; }
   .file-list { list-style: none; padding: 0; }
   .file-list li {
@@ -54,6 +92,16 @@ const CSS = `
     border-left: 4px solid #ffc107;
     padding: 1rem;
     margin: 1rem 0;
+  }
+
+  /* Blockquotes for Karpathy quote */
+  blockquote {
+    border-left: 4px solid #666;
+    margin: 1.5rem 0;
+    padding: 0.5rem 1.5rem;
+    background: #f9f9f9;
+    font-style: italic;
+    color: #444;
   }
 `;
 
@@ -136,7 +184,7 @@ app.get('/', (req, res) => {
     <h2>Components Used</h2>
     <table>
       <tr><th>Concept</th><th>Example in This Project</th></tr>
-      <tr><td>Prompts</td><td>karpathy-new-layer.md - the original task description</td></tr>
+      <tr><td>Prompts</td><td>karpathy-new-layer.md - the complete document</td></tr>
       <tr><td>Context</td><td>CLAUDE.md - project guidance for the AI</td></tr>
       <tr><td>Skills</td><td>.claude/skills/start-demo-server.md - reusable command</td></tr>
       <tr><td>Hooks</td><td>.claude/hooks.md - automated actions on events</td></tr>
@@ -148,13 +196,13 @@ app.get('/', (req, res) => {
 
 // Timeline page
 app.get('/timeline', (req, res) => {
-  const timelinePath = path.join(NOTES_DIR, 'karpathy-new-layer-complete.md');
+  const timelinePath = path.join(NOTES_DIR, 'karpathy-new-layer.md');
   const html = renderMarkdown(timelinePath);
   const info = getFileInfo(timelinePath);
 
   const content = `
     <div class="meta">
-      Source: karpathy-new-layer-timeline.md | ${info.size} | Last modified: ${info.modified}
+      Source: karpathy-new-layer.md | ${info.size} | Last modified: ${info.modified}
     </div>
     ${html}
   `;
@@ -164,7 +212,7 @@ app.get('/timeline', (req, res) => {
 // Specifications page
 app.get('/specs', (req, res) => {
   const specFiles = [
-    { path: 'karpathy-new-layer-complete.md', desc: 'Complete document (prompt + timeline + examples)' },
+    { path: 'karpathy-new-layer.md', desc: 'Complete document (prompt + timeline + examples)' },
     { path: 'CLAUDE.md', desc: 'Project context for Claude Code' },
     { path: '.claude/skills/start-demo-server.md', desc: 'Skill definition example' },
     { path: '.claude/hooks.md', desc: 'Hooks configuration example' },

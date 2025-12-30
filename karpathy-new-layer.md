@@ -385,26 +385,23 @@ This section demonstrates the concepts above with a self-referential demo: a web
    - `CLAUDE.md` - project context file
    - `.claude/skills/` - a skill definition for starting the server
    - `.claude/hooks.md` - example hook configurations
-4. **Be educational**: Help readers understand that the "source code" for this project is largely English text in Markdown, interpreted by AI
 
 ### File structure
 
 ```
-notes/
-├── karpathy-new-layer.md          # This specification
-├── karpathy-new-layer-timeline.md # Generated timeline
-├── examples.md                    # Demo server specification
-├── CLAUDE.md                      # Project context for Claude Code
+deploy/
+├── karpathy-new-layer.md           # This document
+├── CLAUDE.md                       # Project context for Claude Code
 ├── .claude/
 │   ├── skills/
-│   │   └── start-demo-server.md   # Skill to launch the server
-│   └── hooks.md                   # Hook examples
+│   │   └── start-demo-server.md    # Skill to launch the server
+│   └── hooks.md                    # Hook examples
 └── demo-server/
     ├── package.json
-    └── server.js                  # Express server
+    └── server.js                   # Express server
 ```
 
-### Running the demo
+### Running the demo locally
 
 ```bash
 cd demo-server
@@ -413,8 +410,17 @@ npm start
 # Open http://localhost:3000
 ```
 
-The server should display navigation between:
-- Home (overview of what the demo shows)
-- Timeline (rendered karpathy-new-layer-timeline.md)
-- Specifications (the Markdown files that defined everything)
-- Files (directory listing)
+### What you'll see
+
+- **Home**: Overview of what the demo demonstrates
+- **Timeline**: This document rendered as HTML
+- **Specifications**: The Markdown files that defined everything (expandable)
+- **Files**: Directory listing of the entire project
+
+### The point
+
+The "source code" for this project is largely English text in Markdown files. Claude Code read these specifications and generated working software. This is the "new programmable layer" Karpathy describes—where natural language becomes a programming interface.
+
+---
+
+*Written December 2025*

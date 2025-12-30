@@ -6,9 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a documentation project explaining Andrej Karpathy's observation about the "new software layer" of AI tools. It includes:
 
-- `karpathy-new-layer.md` - The original prompt/specification
-- `karpathy-new-layer-timeline.md` - The generated timeline document
-- `examples.md` - Specification for the demo server
+- `karpathy-new-layer.md` - The complete document (prompt, timeline, and working example)
 - `demo-server/` - A Node.js web server demonstrating these concepts
 
 ## Commands
