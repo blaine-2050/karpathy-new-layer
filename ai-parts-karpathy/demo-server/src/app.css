@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Term entry styling - dark blue term, indented blue definition */
+.term-entry {
+  @apply my-6;
+}
+
+.term-entry > p:first-of-type strong {
+  @apply text-xl font-bold text-blue-900 block mb-1;
+}
+
+.term-entry > p:first-of-type em {
+  @apply text-gray-500 text-sm;
+}
+
+.term-entry > p:nth-of-type(2) {
+  @apply ml-6 mt-2 text-blue-800;
+}
+
+.term-entry > p:nth-of-type(3) {
+  @apply ml-6 text-blue-700 text-sm;
+}
+
+.term-entry > p:nth-of-type(3) em {
+  @apply not-italic text-gray-600;
+}
