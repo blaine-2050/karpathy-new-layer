@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: karpathy-new-layer
-    runtime: node
-    buildCommand: cd demo-server && npm install
-    startCommand: cd demo-server && npm start
-    envVars:
-      - key: NODE_ENV
-        value: production

@@ -12,12 +12,20 @@ export default {
             // Typewriter styling for code blocks (prompts/original markdown)
             'pre': {
               fontFamily: '"Courier New", Courier, "Liberation Mono", monospace',
-              backgroundColor: '#fafafa',
-              border: '1px solid #e0e0e0',
+              backgroundColor: '#fafaf9',
+              border: '1px solid #d4d4d4',
+              color: '#292524',
+              padding: '2rem 2.5rem',
+              borderRadius: '0.5rem',
+              overflowX: 'auto',
+              fontSize: '1.1rem',
+              lineHeight: '1.85',
+              letterSpacing: '0.01em',
             },
             'code': {
               fontFamily: '"Courier New", Courier, "Liberation Mono", monospace',
-              backgroundColor: '#f0f0f0',
+              backgroundColor: '#e8e8e8',
+              color: '#1a1a1a',
               padding: '0.2rem 0.4rem',
               borderRadius: '3px',
               fontWeight: '400',
@@ -27,13 +35,28 @@ export default {
             'pre code': {
               backgroundColor: 'transparent',
               padding: '0',
+              color: 'inherit',
             },
             // Blockquote styling for Karpathy quote
             'blockquote': {
-              borderLeftColor: '#666',
-              backgroundColor: '#f9f9f9',
+              borderLeftColor: '#4a5568',
+              borderLeftWidth: '4px',
+              backgroundColor: '#f7fafc',
               fontStyle: 'italic',
-              color: '#444',
+              color: '#2d3748',
+              padding: '1rem 1.5rem',
+              marginTop: '1.5rem',
+              marginBottom: '1.5rem',
+            },
+            // Ensure headings are visible
+            'h1, h2, h3, h4': {
+              color: '#1a202c',
+            },
+            // Horizontal rules
+            'hr': {
+              borderColor: '#cbd5e0',
+              marginTop: '2rem',
+              marginBottom: '2rem',
             },
           },
         },
