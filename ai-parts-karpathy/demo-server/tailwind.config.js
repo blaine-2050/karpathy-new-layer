@@ -11,16 +11,16 @@ export default {
           css: {
             // Typewriter styling for code blocks (prompts/original markdown)
             'pre': {
-              fontFamily: '"Courier New", Courier, "Liberation Mono", monospace',
+              fontFamily: 'Menlo, Monaco, "Courier New", monospace',
               backgroundColor: '#fafaf9',
               border: '1px solid #d4d4d4',
               color: '#292524',
               padding: '2rem 2.5rem',
               borderRadius: '0.5rem',
               overflowX: 'auto',
-              fontSize: '1.1rem',
-              lineHeight: '1.85',
-              letterSpacing: '0.01em',
+              fontSize: '1.15rem',
+              lineHeight: '1.9',
+              letterSpacing: '0.02em',
             },
             'code': {
               fontFamily: '"Courier New", Courier, "Liberation Mono", monospace',

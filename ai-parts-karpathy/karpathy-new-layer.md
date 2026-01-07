@@ -59,17 +59,37 @@ Andrej Karpathy (born 1986) is one of the most influential figures in modern AI.
 
 ## Part 3: The Timeline
 
-### Foundation Layer: What Karpathy Assumes You Know
+### Foundation Layer: The "Usual Layers Below"
 
-Before diving into AI-specific tools, here are the "usual layers below" that most software professionals already use:
+Before diving into AI-specific tools, here are the traditional technologies that most software professionals already use. These form the substrate on which the new AI layer operates.
 
 <div class="term-entry">
 
-**Unix Terminals** *(1970s)*
+**Unix Terminals** *(1969–1970s)*
 
-A text-based interface for interacting with a computer's operating system. You type commands; the computer executes them.
+A text-based interface for interacting with a computer's operating system. You type commands; the computer executes them. Developed at Bell Labs alongside the Unix operating system.
 
 *Why it matters now:* Most AI coding tools run in terminals. Claude Code, for instance, is a command-line application. Understanding basic shell commands (cd, ls, grep, pipes) is prerequisite knowledge for using modern AI development tools.
+
+</div>
+
+<div class="term-entry">
+
+**grep** *(1973)*
+
+A command-line utility for searching text using regular expressions. Created by Ken Thompson at Bell Labs. The name comes from the ed editor command g/re/p (globally search for a regular expression and print matching lines).
+
+*Why it matters now:* AI coding assistants use grep-like functionality constantly to search codebases. When you ask Claude Code to "find all uses of this function," it's performing grep-style searches.
+
+</div>
+
+<div class="term-entry">
+
+**Pipes** *(1973)*
+
+A mechanism for connecting the output of one command to the input of another, using the | symbol. Invented by Douglas McIlroy at Bell Labs, pipes embody the Unix philosophy of small, composable tools.
+
+*Why it matters now:* Agentic AI systems use similar composability—one tool's output becomes another's input. The conceptual model of chaining specialized operations together underlies modern AI workflows.
 
 </div>
 
@@ -95,7 +115,41 @@ A web-based platform built on git that hosts code repositories and adds collabor
 
 ---
 
-### The Timeline: November 2022 – December 2025
+### The LLM Era: 2019–2022
+
+The period before ChatGPT established the technical foundations that made conversational AI possible.
+
+<div class="term-entry">
+
+**GPT-2** *(February 2019)*
+
+OpenAI's 1.5 billion parameter language model, initially withheld from full release due to misuse concerns. GPT-2's ability to generate coherent paragraphs from prompts demonstrated the potential of large transformers.
+
+*Why it matters:* GPT-2 proved that scaling language models produced emergent capabilities. It sparked both excitement about AI writing assistants and concerns about synthetic text.
+
+</div>
+
+<div class="term-entry">
+
+**GPT-3** *(June 2020)*
+
+OpenAI's 175 billion parameter model, offered via API. GPT-3 enabled developers to embed text generation, Q&A, and code generation into products without hosting the model themselves.
+
+*Why it matters:* GPT-3 launched the "prompt engineering" era. Developers learned that careful instruction-writing could coax useful behavior from the model. Startup tools for copywriting, coding assistance, and chatbots proliferated.
+
+</div>
+
+**June 2021: GitHub Copilot Technical Preview**
+
+GitHub and OpenAI release Copilot, an AI pair programmer trained on public GitHub code. It was the first mainstream AI coding assistant integrated directly into an IDE.
+
+**June 2022: GitHub Copilot General Availability**
+
+Copilot becomes widely available, establishing the model of AI-assisted code completion that would define the industry.
+
+---
+
+### The ChatGPT Era: November 2022 – December 2025
 
 #### 2022
 
@@ -138,6 +192,18 @@ The information available to the model when generating a response. Early ChatGPT
 Anthropic releases Claude in limited trials. Founded by former OpenAI researchers Dario and Daniela Amodei, Anthropic positioned itself as focused on AI safety—building AI systems that are "helpful, harmless, and honest."
 
 Days later, OpenAI releases GPT-4, their first multimodal model (accepting both text and images). GPT-4 demonstrated human-level performance on many professional exams, including passing a simulated bar exam in the top 10%.
+
+**March 2023: ChatGPT Plugins**
+
+OpenAI launches a plugin system allowing ChatGPT to access external services—browsing the web, running code, booking travel, and more.
+
+<div class="term-entry">
+
+**Plugins**
+
+Extensions that give AI systems access to external capabilities beyond their training data. ChatGPT plugins enabled the model to browse the web, execute code, access databases, and interact with third-party services. While OpenAI later deprecated plugins in favor of "GPTs" and tool calling, the plugin concept influenced how AI systems integrate with external services.
+
+</div>
 
 **April 2023: Cursor IDE Launches**
 
@@ -351,15 +417,17 @@ That mental model is what Karpathy is pointing at. Building it takes time and ex
 
 | Date | Event |
 |------|-------|
-| 1970s | Unix terminals established |
+| 1969–1970s | Unix terminals established |
+| 1973 | grep and pipes created at Bell Labs |
 | 2005 | Git created |
 | 2008 | GitHub founded |
 | 2016 | Language Server Protocol (LSP) released |
+| Feb 2019 | GPT-2 released |
 | June 2020 | GPT-3 released |
 | June 2021 | GitHub Copilot technical preview |
 | June 2022 | GitHub Copilot general availability |
 | Nov 30, 2022 | ChatGPT released |
-| March 2023 | Claude (first version), GPT-4 released |
+| March 2023 | Claude (first version), GPT-4, ChatGPT Plugins released |
 | April 2023 | Cursor 0.2.0 |
 | Nov 2023 | DeepSeek Coder released |
 | Nov 25, 2024 | Model Context Protocol (MCP) released |
